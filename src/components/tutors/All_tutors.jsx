@@ -28,7 +28,7 @@ const All_tutors = ({ data }) => {
             </SearchField>
             <div className='container mx-auto my-10'>
                 {
-                    filteredData.length > 0 ? <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2'>
+                    filteredData.length > 0 ? <div className=' grid grid-cols-2 lg:grid-cols-3 gap-2'>
                         {(filteredData.map((item) => {
                             return <Tutor_card key={item._id} item={item} />
                         }))}

@@ -79,7 +79,7 @@ const Tutor_card = ({ item, goTutor }) => {
 
 
     return (
-        <div className="max-w-80 mx-auto w-full dark:text-black rounded-2xl overflow-hidden bg-white shadow-lg border border-gray-100 hover:shadow-2xl transition duration-300">
+        <div className="max-w-50 md:max-w-80 mx-auto w-full dark:text-black rounded-2xl overflow-hidden bg-white shadow-lg border border-gray-100 hover:shadow-2xl transition duration-300">
 
             {/* Image */}
             <div className="relative">
@@ -104,7 +104,7 @@ const Tutor_card = ({ item, goTutor }) => {
                 </p>
 
                 {/* Info badges */}
-                <div className="mt-3 flex flex-wrap gap-2 text-xs">
+                <div className={`mt-3 flex-wrap gap-2 text-xs md:flex ${goTutor ? "hidden" :"flex" } `}>
                     <span className="bg-gray-100 px-3 py-1 rounded-full">
                         📍 {item.location}
                     </span>
@@ -115,7 +115,7 @@ const Tutor_card = ({ item, goTutor }) => {
                 </div>
 
                 {/* Fee + Slot */}
-                <div className="mt-4 flex justify-between items-center">
+                <div className={` mt-4  justify-between items-center md:flex ${goTutor ? "hidden" :"flex" }  `}>
 
                     <div>
                         <p className="text-sm text-gray-500">Fee</p>

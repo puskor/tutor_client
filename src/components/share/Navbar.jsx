@@ -122,7 +122,15 @@ const Navbar = () => {
                         {
                             allNav
                         }
+                        <button
+                            onClick={() =>
+                                setTheme(theme === 'dark' ? 'light' : 'dark')
+                            }
+                        >
+                            {theme === 'dark' ? '☀️' : '🌙'}
+                        </button>
                         {
+
                             session ? (<button onClick={handelSignOut} className="mt-2 bg-green-500 text-white py-2 rounded-full">
                                 Log out
                             </button>

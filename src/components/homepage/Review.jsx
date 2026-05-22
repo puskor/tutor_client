@@ -27,7 +27,7 @@ export default function Review() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.2 }}
-                        className="p-4 border rounded-lg shadow-sm flex gap-2 items-center  bg-white"
+                        className="p-4 border rounded-lg shadow-sm flex gap-2 items-center  bg-white text-black"
                     >
                         <Image alt="review" width={150} height={150} src={"/assets/undraw_text-messages_p6bk.svg"}></Image>
                         <div>
