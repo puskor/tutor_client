@@ -56,7 +56,7 @@ const Add_tutor = () => {
 
     return (
         <div className="max-w-6xl mx-auto my-10 card ">
-            <h1 className="text-center font-bold text-2xl">ADD TUTOR</h1>
+            <h1 className="text-center font-bold text-2xl dark:text-white">ADD TUTOR</h1>
             <hr />
             <Form className="flex w-90 md:w-3xl flex-col gap-4 mx-auto" onSubmit={onSubmit}>
                 <div className="md:flex gap-4">

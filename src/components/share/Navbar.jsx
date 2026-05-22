@@ -1,10 +1,11 @@
 "use client"
 
 import { Button, Dropdown, Label } from "@heroui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NavLink from "./NavLink";
 import Link from "next/link";
 import { authClient, useSession } from "@/lib/auth-client";
+import { useTheme } from "next-themes";
 
 
 
@@ -28,9 +29,15 @@ const Navbar = () => {
         </>
     )
 
-
-
+    const { theme, setTheme } = useTheme()
+    const [mounted, setMounted] = useState(false)
     const [open, setOpen] = useState();
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) return null
+
     return (
         <nav className="w-full bg-[#0b2e52] shadow-md sticky top-0 left-0 z-50 text-white ">
             <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
@@ -42,10 +49,20 @@ const Navbar = () => {
                     </div>
                 </Link>
 
+
                 {/* Desktop Menu */}
                 <ul className="hidden md:flex gap-4 text-gray-300 font-medium">
                     {allNav}
+
+                    <button
+                        onClick={() =>
+                            setTheme(theme === 'dark' ? 'light' : 'dark')
+                        }
+                    >
+                        {theme === 'dark' ? '☀️' : '🌙'}
+                    </button>
                 </ul>
+
 
                 <div className="hidden md:block">
                     {

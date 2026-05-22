@@ -5,12 +5,12 @@ import Image from "next/image";
 
 export default function Review() {
     return (
-        <section className="py-16 px-6 bg-white">
+        <section className="py-16 px-6">
             <motion.h2
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="text-3xl font-bold text-center mb-10"
+                className="text-3xl font-bold text-center mb-10 dark:text-white"
             >
                 What Students Say
             </motion.h2>
@@ -27,7 +27,7 @@ export default function Review() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.2 }}
-                        className="p-4 border rounded-lg shadow-sm flex gap-2 items-center"
+                        className="p-4 border rounded-lg shadow-sm flex gap-2 items-center  bg-white"
                     >
                         <Image alt="review" width={150} height={150} src={"/assets/undraw_text-messages_p6bk.svg"}></Image>
                         <div>
