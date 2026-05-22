@@ -22,7 +22,7 @@ const item = {
 
 export default function WhyChooseUs() {
     return (
-        <section className="py-16 px-6 m-3 border-2 container mx-auto rounded-2xl">
+        <section className="py-16 px-6 m-3 border-2 container mx-auto rounded-2xl bg-gray-50 dark:bg-blue-950">
             <motion.h2
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
