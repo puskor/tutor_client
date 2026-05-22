@@ -1,6 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { BiSupport } from "react-icons/bi";
+import { FaAtom, FaBalanceScale, FaBattleNet } from "react-icons/fa";
+import { MdAccessTime } from "react-icons/md";
 
 const container = {
     hidden: { opacity: 0 },
@@ -19,7 +22,7 @@ const item = {
 
 export default function WhyChooseUs() {
     return (
-        <section className="py-16 px-6 ">
+        <section className="py-16 px-6 m-3 border-2 container mx-auto rounded-2xl">
             <motion.h2
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -37,21 +40,25 @@ export default function WhyChooseUs() {
                 className="grid md:grid-cols-4 gap-6 text-center"
             >
                 <motion.div variants={item} className="border-2 p-2 rounded-sm bg-gray-100 dark:text-black">
+                    <FaBattleNet className="w-3xs text-7xl text-green-600 my-2"/>
                     <h3 className="font-semibold text-xl">Expert Tutors</h3>
                     <p>Learn from industry-level experienced mentors.</p>
                 </motion.div>
 
                 <motion.div variants={item} className="border-2 p-2 rounded-sm bg-gray-100 dark:text-black">
+                    <FaBalanceScale className="w-3xs text-7xl text-green-600 my-2"/>
                     <h3 className="font-semibold text-xl">Affordable</h3>
                     <p>High-quality learning at low cost.</p>
                 </motion.div>
 
                 <motion.div variants={item} className="border-2 p-2 rounded-sm bg-gray-100 dark:text-black">
+                    <MdAccessTime className="w-3xs text-7xl text-green-600 my-2"/>
                     <h3 className="font-semibold text-xl">Flexible Time</h3>
                     <p>Study anytime, anywhere.</p>
                 </motion.div>
 
                 <motion.div variants={item} className="border-2 p-2 rounded-sm bg-gray-100 dark:text-black">
+                    <BiSupport className="w-3xs text-7xl text-green-600 my-2"/>
                     <h3 className="font-semibold text-xl">Support</h3>
                     <p>We help you even after classes.</p>
                 </motion.div>
