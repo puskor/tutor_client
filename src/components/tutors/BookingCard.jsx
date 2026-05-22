@@ -8,7 +8,7 @@ const BookingCard = ({ path, item }) => {
 
 
     return (
-        <div className="w-full max-w-2xl mx-auto bg-white border border-gray-100 rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden flex">
+        <div className="w-full max-w-2xl mx-auto bg-white border border-gray-100 rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden flex dark:text-black">
 
             {/* Left Image */}
             <div className="w-[140px] h-full">

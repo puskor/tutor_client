@@ -19,7 +19,7 @@ const item = {
 
 export default function WhyChooseUs() {
     return (
-        <section className="py-16 px-6 bg-gray-50">
+        <section className="py-16 px-6 ">
             <motion.h2
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -36,22 +36,22 @@ export default function WhyChooseUs() {
                 viewport={{ once: true }}
                 className="grid md:grid-cols-4 gap-6 text-center"
             >
-                <motion.div variants={item}>
+                <motion.div variants={item} className="border-2 p-2 rounded-sm bg-gray-100 dark:text-black">
                     <h3 className="font-semibold text-xl">Expert Tutors</h3>
                     <p>Learn from industry-level experienced mentors.</p>
                 </motion.div>
 
-                <motion.div variants={item}>
+                <motion.div variants={item} className="border-2 p-2 rounded-sm bg-gray-100 dark:text-black">
                     <h3 className="font-semibold text-xl">Affordable</h3>
                     <p>High-quality learning at low cost.</p>
                 </motion.div>
 
-                <motion.div variants={item}>
+                <motion.div variants={item} className="border-2 p-2 rounded-sm bg-gray-100 dark:text-black">
                     <h3 className="font-semibold text-xl">Flexible Time</h3>
                     <p>Study anytime, anywhere.</p>
                 </motion.div>
 
-                <motion.div variants={item}>
+                <motion.div variants={item} className="border-2 p-2 rounded-sm bg-gray-100 dark:text-black">
                     <h3 className="font-semibold text-xl">Support</h3>
                     <p>We help you even after classes.</p>
                 </motion.div>

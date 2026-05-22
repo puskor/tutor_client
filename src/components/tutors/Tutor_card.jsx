@@ -79,7 +79,7 @@ const Tutor_card = ({ item, goTutor }) => {
 
 
     return (
-        <div className="max-w-80 mx-auto w-full rounded-2xl overflow-hidden bg-white shadow-lg border border-gray-100 hover:shadow-2xl transition duration-300">
+        <div className="max-w-80 mx-auto w-full dark:text-black rounded-2xl overflow-hidden bg-white shadow-lg border border-gray-100 hover:shadow-2xl transition duration-300">
 
             {/* Image */}
             <div className="relative">

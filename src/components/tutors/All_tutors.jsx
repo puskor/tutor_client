@@ -17,8 +17,8 @@ const All_tutors = ({ data }) => {
     );
 
     return (
-        <div>
-            <SearchField name="search" className={"max-w-xl mx-auto my-2 border rounded-2xl"}>
+        <div className='dark:text-black'>
+            <SearchField name="search" className={"max-w-xl mx-auto my-2 border rounded-2xl "}>
                 <Label></Label>
                 <SearchField.Group>
                     <SearchField.SearchIcon />
