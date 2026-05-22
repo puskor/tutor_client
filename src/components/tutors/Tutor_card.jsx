@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { Rocket } from "@gravity-ui/icons";
 
-const Tutor_card = ({ item }) => {
+const Tutor_card = ({ item, goTutor }) => {
     // console.log(item)
     const [studentName, setStudentName] = useState("");
     const [phone, setPhone] = useState("");
@@ -56,6 +56,10 @@ const Tutor_card = ({ item }) => {
         }
         redirect("/tutors/booking")
         // console.log(bookingData);
+    }
+
+    const handelRoute = ()=>{
+        redirect("/tutors")
     }
 
 
@@ -128,94 +132,94 @@ const Tutor_card = ({ item }) => {
 
 
                 <Modal>
-                    <Button isDisabled={item.slot <= 0 || !session} className="mt-2 w-full bg-black text-white py-2.5 rounded-xl hover:bg-gray-800 transition">Book Now</Button>
-                    <Modal.Backdrop>
-                        <Modal.Container>
-                            <Modal.Dialog className="sm:max-w-[340px] md:max-w-[500px]">
-                                <Modal.CloseTrigger />
-                                <form onSubmit={(e) => {
-                                    e.preventDefault();
-                                    handelBooking();
-                                }} className="max-w-3xl mx-auto  space-y-2">
-                                    <h2 className="text-xl font-bold">Booking Form</h2>
+                    <Button  onClick={ goTutor && handelRoute} isDisabled={item.slot <= 0 || !session} className="mt-2 w-full bg-black text-white py-2.5 rounded-xl hover:bg-gray-800 transition">Book Now</Button>
+                <Modal.Backdrop>
+                    <Modal.Container>
+                        <Modal.Dialog className="sm:max-w-[340px] md:max-w-[500px]">
+                            <Modal.CloseTrigger />
+                            <form onSubmit={(e) => {
+                                e.preventDefault();
+                                handelBooking();
+                            }} className="max-w-3xl mx-auto  space-y-2">
+                                <h2 className="text-xl font-bold">Booking Form</h2>
 
-                                    {/* Student Name */}
-                                    <div>
-                                        <label className="block ">Student Name</label>
-                                        <input
-                                            required
-                                            type="text"
-                                            name="studentName"
-                                            onChange={(e) => setStudentName(e.target.value)}
-                                            placeholder="Enter student name"
-                                            className="w-full border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500"
-                                        />
-                                    </div>
+                                {/* Student Name */}
+                                <div>
+                                    <label className="block ">Student Name</label>
+                                    <input
+                                        required
+                                        type="text"
+                                        name="studentName"
+                                        onChange={(e) => setStudentName(e.target.value)}
+                                        placeholder="Enter student name"
+                                        className="w-full border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500"
+                                    />
+                                </div>
 
-                                    {/* Phone */}
-                                    <div>
-                                        <label className="block mb-1 ">Phone</label>
-                                        <input
-                                            required
-                                            type="tel"
-                                            name="phone"
-                                            onChange={(e) => setPhone(e.target.value)}
-                                            placeholder="Enter phone number"
-                                            className="w-full border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500"
-                                        />
-                                    </div>
+                                {/* Phone */}
+                                <div>
+                                    <label className="block mb-1 ">Phone</label>
+                                    <input
+                                        required
+                                        type="tel"
+                                        name="phone"
+                                        onChange={(e) => setPhone(e.target.value)}
+                                        placeholder="Enter phone number"
+                                        className="w-full border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500"
+                                    />
+                                </div>
 
-                                    {/* Tutor ID Auto Filled */}
-                                    <div>
-                                        <label className="block mb-1 ">Tutor ID</label>
-                                        <input
-                                            type="text"
-                                            name="tutorId"
-                                            value={item._id}
-                                            readOnly
-                                            className="w-full border rounded-lg px-4 py-2 bg-gray-100 cursor-not-allowed"
-                                        />
-                                    </div>
+                                {/* Tutor ID Auto Filled */}
+                                <div>
+                                    <label className="block mb-1 ">Tutor ID</label>
+                                    <input
+                                        type="text"
+                                        name="tutorId"
+                                        value={item._id}
+                                        readOnly
+                                        className="w-full border rounded-lg px-4 py-2 bg-gray-100 cursor-not-allowed"
+                                    />
+                                </div>
 
-                                    {/* Tutor Name Auto Filled */}
-                                    <div>
-                                        <label className="block mb-1 ">Tutor Name</label>
-                                        <input
-                                            type="text"
-                                            name="tutorName"
-                                            value={item.name}
-                                            readOnly
-                                            className="w-full border rounded-lg px-4 py-2 bg-gray-100 cursor-not-allowed"
-                                        />
-                                    </div>
+                                {/* Tutor Name Auto Filled */}
+                                <div>
+                                    <label className="block mb-1 ">Tutor Name</label>
+                                    <input
+                                        type="text"
+                                        name="tutorName"
+                                        value={item.name}
+                                        readOnly
+                                        className="w-full border rounded-lg px-4 py-2 bg-gray-100 cursor-not-allowed"
+                                    />
+                                </div>
 
-                                    {/* Student Email Auto Filled */}
-                                    <div>
-                                        <label className="block mb-1 ">Student Email</label>
-                                        <input
-                                            type="email"
-                                            name="studentEmail"
-                                            value={session?.user?.email}
-                                            readOnly
-                                            className="w-full border rounded-lg px-4 py-2 bg-gray-100 cursor-not-allowed"
-                                        />
-                                    </div>
+                                {/* Student Email Auto Filled */}
+                                <div>
+                                    <label className="block mb-1 ">Student Email</label>
+                                    <input
+                                        type="email"
+                                        name="studentEmail"
+                                        value={session?.user?.email}
+                                        readOnly
+                                        className="w-full border rounded-lg px-4 py-2 bg-gray-100 cursor-not-allowed"
+                                    />
+                                </div>
 
-                                    <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
-                                        Submit
-                                    </button>
-                                </form>
-                            </Modal.Dialog>
-                        </Modal.Container>
-                    </Modal.Backdrop>
-                </Modal>
-                {/* <button onClick={valid} className="mt-5 w-full bg-black text-white py-2.5 rounded-xl hover:bg-gray-800 transition">
+                                <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
+                                    Submit
+                                </button>
+                            </form>
+                        </Modal.Dialog>
+                    </Modal.Container>
+                </Modal.Backdrop>
+            </Modal>
+            {/* <button onClick={valid} className="mt-5 w-full bg-black text-white py-2.5 rounded-xl hover:bg-gray-800 transition">
                     Book now
                 </button> */}
 
 
-            </div>
         </div>
+        </div >
     );
 };
 

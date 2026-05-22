@@ -5,10 +5,14 @@ import { Check } from "@gravity-ui/icons";
 import { Button, Description, FieldError, Form, Input, Label, Separator, TextField } from "@heroui/react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { useState } from "react";
 import toast from "react-hot-toast";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
+
+    const [show,setShow] = useState(true);
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -59,6 +63,7 @@ const Login = () => {
                 >
                     <Label>Email</Label>
                     <Input placeholder="john@example.com" />
+                    
                     <FieldError />
                 </TextField>
 
@@ -66,7 +71,10 @@ const Login = () => {
                     isRequired
                     minLength={8}
                     name="password"
-                    type="password"
+                    className={"relative"}
+                    // type="password"
+                    type={show ? "password" : "text"}
+
                     validate={(value) => {
                         if (value.length < 8) {
                             return "Password must be at least 8 characters";
@@ -81,8 +89,10 @@ const Login = () => {
                         return null;
                     }}
                 >
+                    
                     <Label>Password</Label>
-                    <Input placeholder="Enter your password" />
+                    <Input placeholder="Enter your password"  />
+                    <button type="button" className="absolute left-88 top-9" onClick={()=>setShow(!show)}>{show ? <FaRegEye /> : <FaRegEyeSlash />}</button>
                     <Description>Must be at least 8 characters with 1 uppercase and 1 number</Description>
                     <FieldError />
                 </TextField>
