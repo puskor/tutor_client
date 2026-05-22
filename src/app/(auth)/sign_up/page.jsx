@@ -7,6 +7,7 @@ import { redirect } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
 const Sign_up = () => {
     const onSubmit = async (e) => {
