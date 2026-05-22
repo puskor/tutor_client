@@ -4,6 +4,7 @@ import { authClient } from "@/lib/auth-client";
 import { Button, Description, FieldError, Form, Input, Label, Separator, TextField } from "@heroui/react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { useState } from "react";
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 
@@ -36,6 +37,8 @@ const Sign_up = () => {
             provider: "google",
         });
     };
+
+    const [show, setShow] = useState(true);
 
     return (
         <div className="max-w-6xl mx-auto my-20 card ">
@@ -89,10 +92,12 @@ const Sign_up = () => {
 
 
                 <TextField
+                    className={"relative"}
                     isRequired
                     minLength={8}
                     name="password"
-                    type="password"
+                    // type="password"
+                    type={show ? "password" : "text"}
                     validate={(value) => {
                         if (value.length < 8) {
                             return "Password must be at least 8 characters";
@@ -109,6 +114,7 @@ const Sign_up = () => {
                 >
                     <Label>Password</Label>
                     <Input placeholder="Enter your password" />
+                    <button type="button" className="absolute left-88 top-9" onClick={() => setShow(!show)}>{!show ? <FaRegEye /> : <FaRegEyeSlash />}</button>
                     <Description>Must be at least 8 characters with 1 uppercase and 1 number</Description>
                     <FieldError />
                 </TextField>

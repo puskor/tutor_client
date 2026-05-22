@@ -92,7 +92,7 @@ const Login = () => {
                     
                     <Label>Password</Label>
                     <Input placeholder="Enter your password"  />
-                    <button type="button" className="absolute left-88 top-9" onClick={()=>setShow(!show)}>{show ? <FaRegEye /> : <FaRegEyeSlash />}</button>
+                    <button type="button" className="absolute left-88 top-9" onClick={()=>setShow(!show)}>{!show ? <FaRegEye /> : <FaRegEyeSlash />}</button>
                     <Description>Must be at least 8 characters with 1 uppercase and 1 number</Description>
                     <FieldError />
                 </TextField>
