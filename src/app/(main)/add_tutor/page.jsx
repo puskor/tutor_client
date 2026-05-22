@@ -28,14 +28,14 @@ const Add_tutor = () => {
         }
 
         const { data: tokenData } = await authClient.token()
-        // console.log(tokenData);
+        // console.log(tokenData,"-------------");
 
 
         const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/tutor`, {
             method: "POST",
             headers: {
                 "content-type": "application/json",
-                authentication: `Bearer ${tokenData}`
+                authentication: `Bearer ${tokenData.token}`
             },
             body: JSON.stringify(adding_data),
         })
