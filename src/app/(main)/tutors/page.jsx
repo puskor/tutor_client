@@ -1,10 +1,11 @@
 import All_tutors from '@/components/tutors/All_tutors';
-import React from 'react';
+import { TutorData } from '@/lib/data';
 
-const Tutor = () => {
+const Tutor = async () => {
+    const data = await TutorData();
     return (
         <div>
-            <All_tutors/>
+            <All_tutors data={data}/>
         </div>
     );
 };
